@@ -61,7 +61,7 @@ public class main {
         }
         System.out.println("Null");
     }
-    public static void main(String[] args) {
+    public static void main1(String[] args) {
         Node first = new Node(2);
         first.next = new Node(3);
         first.next.next = new Node(4);
