@@ -17,6 +17,6 @@ public class Solution {
         return new String(Char);
     }
     public static void main(String[] args) {
-        System.out.println(reverseStr("abcdefg", 2));
+        System.out.println(reverseStr("abcdefg", 3));
     }
 }
