@@ -28,7 +28,6 @@ public class Solution {
                 }
                 return new int[]{i,j};
                 
-
             }else if (sum > target) {
                 right --;
 
