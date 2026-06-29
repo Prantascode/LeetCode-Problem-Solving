@@ -4,26 +4,22 @@ class Solution {
         int maxLength = 0;
         int maxFreq = 0;
 
-        HashMap<Character, Integer> freq = new HashMap<>();
+        int[] freq = new int[26];
+
         for (int right = 0; right < s.length(); right++) {
+            int index = s.charAt(right) - 'A';
 
-            freq.put(s.charAt(right), freq.getOrDefault(s.charAt(right),0) + 1);
-            
-            maxFreq = Math.max(maxFreq, freq.get(s.charAt(right)));
+            freq[index]++;
 
-            while ((right - left + 1) - maxFreq > k) {
+            maxFreq = Math.max(maxFreq, freq[index]);
 
-                freq.put(s.charAt(left), freq.get(s.charAt(left)) - 1);
-
-                if (freq.get(s.charAt(left)) == 0) {
-                    freq.remove(s.charAt(left));
-                }
+            while ((right - left + 1) - maxFreq > k ) {
+                freq[s.charAt(left) - 'A']--;
                 left++;
             }
-
             maxLength = Math.max(maxLength, right - left + 1);
-
         }
+
         return maxLength;
     }
 }
