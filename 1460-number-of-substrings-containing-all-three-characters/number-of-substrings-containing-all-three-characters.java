@@ -10,7 +10,7 @@ class Solution {
 
             freq[s.charAt(right) - 'a']++;
 
-            while (matchChar(freq)) {
+            while (freq[0] > 0 && freq[1] > 0 && freq[2] > 0) {
                 
                 total += length - right;
 
@@ -20,9 +20,5 @@ class Solution {
         }
 
         return total;
-    }
-
-    public static boolean matchChar(int[] freq){
-        return freq[0] > 0 && freq[1] > 0 && freq[2] > 0;
     }
 }
