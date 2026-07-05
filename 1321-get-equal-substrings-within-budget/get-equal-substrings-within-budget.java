@@ -14,13 +14,13 @@ class Solution {
         int sum = 0;
         for (int right = 0; right < arr.length; right++) {
             sum += arr[right];
-            if (sum <= maxCost) {
-                length = right - left + 1;
-            }
+            
             while (sum > maxCost) {
                 sum -= arr[left];
                 left++;  
             }
+
+            length = right - left + 1;
 
             maxLenth = Math.max(maxLenth, length);
         }
