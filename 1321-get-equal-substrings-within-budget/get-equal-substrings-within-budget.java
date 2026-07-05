@@ -1,8 +1,9 @@
 class Solution {
     public int equalSubstring(String s, String t, int maxCost) {
-         int[] arr = new int[s.length()];
+        int n = t.length();
+         int[] arr = new int[n];
 
-        for (int i = 0; i < s.length(); i++) {
+        for (int i = 0; i < n; i++) {
             arr[i] = Math.abs(s.charAt(i) - t.charAt(i));
         }
         
@@ -10,7 +11,7 @@ class Solution {
         int left = 0; int right = 0;
         int maxLenth = 0;
         int sum = 0;
-        while(right < arr.length) {
+        while(right < n) {
             sum += arr[right];
 
             while (sum > maxCost) {
