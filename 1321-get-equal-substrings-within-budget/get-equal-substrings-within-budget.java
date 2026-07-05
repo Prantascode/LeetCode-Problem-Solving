@@ -5,7 +5,6 @@ class Solution {
         for (int i = 0; i < s.length(); i++) {
             int cost = Math.abs(s.charAt(i) - t.charAt(i));
             arr[i] = cost;
-            System.out.println(arr[i]);
         }
         
 
@@ -15,7 +14,6 @@ class Solution {
         int sum = 0;
         for (int right = 0; right < arr.length; right++) {
             sum += arr[right];
-            //System.out.println(sum);
             if (sum <= maxCost) {
                 length = right - left + 1;
             }
