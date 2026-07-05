@@ -1,0 +1,31 @@
+class Solution {
+    public int equalSubstring(String s, String t, int maxCost) {
+        int[] arr = new int[s.length()];
+
+        for (int i = 0; i < s.length(); i++) {
+            int cost = Math.abs(s.charAt(i) - t.charAt(i));
+            arr[i] = cost;
+            System.out.println(arr[i]);
+        }
+        
+
+        int left = 0;
+        int length = 0;
+        int maxLenth = 0;
+        int sum = 0;
+        for (int right = 0; right < arr.length; right++) {
+            sum += arr[right];
+            //System.out.println(sum);
+            if (sum <= maxCost) {
+                length = right - left + 1;
+            }
+            while (sum > maxCost) {
+                sum -= arr[left];
+                left++;  
+            }
+
+            maxLenth = Math.max(maxLenth, length);
+        }
+        return maxLenth;
+    }
+}
