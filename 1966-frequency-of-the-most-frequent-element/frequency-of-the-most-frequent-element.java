@@ -10,7 +10,7 @@ class Solution {
 
             windowSum += nums[right];
 
-            while ((long) nums[right] * (right - left + 1) - windowSum > k) {
+            while ((long) (right - left + 1) * nums[right] - windowSum > k) {
                 windowSum -= nums[left];
                 left++;
             }
